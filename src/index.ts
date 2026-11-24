@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
-import { install, name, instructions } from "./platform.ts";
+import { install, name, title, instructions } from "./platform.ts";
 import { PublicSource } from "./source.ts";
 
 export function handler(upstream: typeof fetch) {
@@ -9,6 +9,7 @@ export function handler(upstream: typeof fetch) {
     if (url.pathname === "/" && request.method === "GET") {
       return Response.json({
         name,
+        title,
         instructions,
         transport: "streamable-http",
         endpoint: new URL("/mcp", url).href,
@@ -17,7 +18,7 @@ export function handler(upstream: typeof fetch) {
           reason: "No approved application or gameplay-data permissions configured.",
           platform_docs: "https://en-americas-support.nintendo.com/app/answers/detail/a_id/27499/",
         },
-        repository: "https://github.com/oratis/" + name,
+        repository: "https://github.com/oratis/AI-Agent-Nintendo-Connector",
       });
     }
     if (url.pathname !== "/mcp") return new Response("Not found", { status: 404 });
@@ -31,7 +32,7 @@ export function handler(upstream: typeof fetch) {
       });
     }
 
-    const server = new McpServer({ name, version: "0.1.1" }, { instructions });
+    const server = new McpServer({ name, title, version: "0.1.2" }, { instructions });
     install(server, new PublicSource(upstream));
     const transport = new WebStandardStreamableHTTPServerTransport({
       sessionIdGenerator: undefined,

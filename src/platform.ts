@@ -2,7 +2,8 @@ import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { annotations, limit, PublicSource, result, SourceError } from "./source.ts";
 
-export const name = "nintendo-mcp";
+export const name = "ai-agent-nintendo-connector";
+export const title = "AI Agent Nintendo Connector";
 export const instructions =
   "Read Nintendo UK's public game catalogue. Prices are catalogue observations in GBP. Dates use the UK release schedule. Cite the Nintendo game page for each result. Personal Nintendo Account authorization is unavailable in this deployment. Purchase history, personal achievements and account play activity are unavailable.";
 const system = z.enum(["switch", "switch2", "all"]).default("all");

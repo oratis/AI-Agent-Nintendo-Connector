@@ -1,4 +1,4 @@
-# Nintendo MCP
+# AI Agent Nintendo Connector
 
 [简体中文](README.zh-CN.md) · [MIT license](LICENSE)
 
@@ -74,8 +74,8 @@ Each request gets its own MCP server and transport. Inputs are validated before 
 Use Node.js 24 or later.
 
 ```sh
-git clone https://github.com/oratis/nintendo-mcp.git
-cd nintendo-mcp
+git clone https://github.com/oratis/AI-Agent-Nintendo-Connector.git
+cd AI-Agent-Nintendo-Connector
 npm ci
 npm run check
 npm test
@@ -95,4 +95,4 @@ npm run smoke -- http://localhost:8787/mcp
 - A browser GET to `/mcp` returns HTTP 405. Open the [service information](https://nintendo-mcp.oratisoratisoratisoratis.workers.dev/) to check the hostname, or use the smoke test for an end-to-end check.
 - An upstream error after successful tool discovery concerns the platform lookup. Check the identifier and region, then retry.
 
-Community project maintained by [oratis](https://github.com/oratis). Related connectors · [Steam MCP](https://github.com/oratis/steam-mcp) · [PlayStation MCP](https://github.com/oratis/playstation-mcp).
+Community project maintained by [oratis](https://github.com/oratis). Related connectors · [AI Agent Steam Connector](https://github.com/oratis/AI-Agent-Steam-Connector) · [AI Agent PlayStation Connector](https://github.com/oratis/AI-Agent-PlayStation-Connector).
