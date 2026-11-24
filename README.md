@@ -26,6 +26,18 @@ claude mcp add --transport http --scope user nintendo https://nintendo-mcp.orati
 
 Start a new conversation in Codex or open `/mcp` in Claude Code to check the connection.
 
+## Can I connect my Nintendo Account?
+
+The hosted connector has **public catalogue access only**. Nintendo documents consent for partner services to receive selected account information, such as a nickname. Its own Nintendo Store app can show play history and time by title. The `oratis` deployment has no approved partner application or grant for either purchase records or play activity. [Partner account sharing](https://en-americas-support.nintendo.com/app/answers/detail/a_id/27499/) · [Nintendo Store play activity](https://www.nintendo.com/us/mobile-apps/nintendo-store/)
+
+| Personal data | Result in this release |
+| --- | --- |
+| Purchased or owned games | Unavailable. Catalogue IDs describe products. |
+| Achievements | No account-wide achievement feed verified for this connector. |
+| Time played and last played | Unavailable. No player activity was retrieved. |
+
+The public smoke test queries the UK catalogue and both release windows. No real Nintendo Account grant or personal data was available for testing. Nintendo describes a separate, request-based data-access process for eligible users and recipients. This connector has no live access through that process. [Nintendo data access](https://www.nintendo.com/en-gb/Legal-information/Data-Act-2913095.html)
+
 ## Try it
 
 > Find the Switch and Switch 2 editions of Tears of the Kingdom in the UK. Compare their release dates and listed prices, then show three upcoming Switch 2 games.

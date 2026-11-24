@@ -12,6 +12,11 @@ export function handler(upstream: typeof fetch) {
         instructions,
         transport: "streamable-http",
         endpoint: new URL("/mcp", url).href,
+        personal_account: {
+          available: false,
+          reason: "No approved application or gameplay-data permissions configured.",
+          platform_docs: "https://en-americas-support.nintendo.com/app/answers/detail/a_id/27499/",
+        },
         repository: "https://github.com/oratis/" + name,
       });
     }
@@ -26,7 +31,7 @@ export function handler(upstream: typeof fetch) {
       });
     }
 
-    const server = new McpServer({ name, version: "0.1.0" }, { instructions });
+    const server = new McpServer({ name, version: "0.1.1" }, { instructions });
     install(server, new PublicSource(upstream));
     const transport = new WebStandardStreamableHTTPServerTransport({
       sessionIdGenerator: undefined,

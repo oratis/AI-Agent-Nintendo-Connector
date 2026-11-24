@@ -4,7 +4,7 @@ import { annotations, limit, PublicSource, result, SourceError } from "./source.
 
 export const name = "nintendo-mcp";
 export const instructions =
-  "Read Nintendo UK's public game catalogue. Prices are catalogue observations in GBP. Dates use the UK release schedule. Cite the Nintendo game page for each result.";
+  "Read Nintendo UK's public game catalogue. Prices are catalogue observations in GBP. Dates use the UK release schedule. Cite the Nintendo game page for each result. Personal Nintendo Account authorization is unavailable in this deployment. Purchase history, personal achievements and account play activity are unavailable.";
 const system = z.enum(["switch", "switch2", "all"]).default("all");
 type System = z.output<typeof system>;
 const offset = z.number().int().min(0).max(10000).default(0);

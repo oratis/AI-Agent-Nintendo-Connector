@@ -26,6 +26,18 @@ claude mcp add --transport http --scope user nintendo https://nintendo-mcp.orati
 
 配置后在 Codex 新开对话，或在 Claude Code 输入 `/mcp` 查看连接状态。
 
+## 能连接我的 Nintendo Account 吗？
+
+托管版目前**仅提供公开目录查询**。任天堂允许合作伙伴在用户同意后读取特定账户资料，例如昵称。任天堂自己的 Nintendo Store 应用可以显示游戏历史和游玩时长。当前 `oratis` 没有获批的合作伙伴应用，也没有购买记录或游玩活动权限。 [合作伙伴账户资料共享](https://en-americas-support.nintendo.com/app/answers/detail/a_id/27499/) · [Nintendo Store 游玩记录](https://www.nintendo.com/us/mobile-apps/nintendo-store/)
+
+| 个人数据 | 本次验证结果 |
+| --- | --- |
+| 已购或拥有的游戏 | 无法读取。目录 ID 只标识商品。 |
+| 成就 | 未验证到可供此连接器使用的全账号成就接口。 |
+| 游玩时长及最近游玩时间 | 无法读取。此次没有取得玩家活动记录。 |
+
+线上测试覆盖英国游戏目录和两个发行时间窗口。此次没有真实 Nintendo Account 授权或个人数据可供验证。任天堂还为符合条件的用户和接收方提供独立的数据申请流程，本服务尚未获授该渠道的实时访问权限。 [任天堂数据访问说明](https://www.nintendo.com/en-gb/Legal-information/Data-Act-2913095.html)
+
 ## 试一句
 
 > 找到英国目录里的《王国之泪》Switch 和 Switch 2 版，比较发行日期与价格，再列出三款即将发售的 Switch 2 游戏。
